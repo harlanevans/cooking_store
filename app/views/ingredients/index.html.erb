@@ -1,0 +1,14 @@
+<h1><%= @plate.name%> Ingredients</h1>
+
+<%= link_to 'Add Ingredient', new_plate_ingredient_path(@plate) %>
+
+<% @ings.each do |ing| %>
+    <li>
+      <%= ing.name%>
+  <br />
+        Quantity - <%= ing.amount%>
+    </li>
+  <br />
+  <%= link_to 'Edit Ingredient', edit_plate_ingredient_path(@plate, ing) %>
+  <%= link_to 'Delete', plate_ingredient_path(@plate, ing), method: :delete %>
+<%end%>

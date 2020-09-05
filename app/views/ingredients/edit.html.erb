@@ -1,0 +1,12 @@
+<h1>Edit <%= @ingredient.name %></h1>
+
+<%= form_for [@plate, @ingredient] do |f|%>
+
+<%= f.label :name%>
+<%= f.text_field :name, required: true, placeholder: "Name", autofocus: true%>
+
+<%= f.label :amount%>
+<%= f.number_field :amount, required: true, placeholder: 1%>
+
+<%= f.submit %>
+<%end%>

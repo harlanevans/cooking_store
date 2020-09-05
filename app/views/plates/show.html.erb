@@ -1,0 +1,22 @@
+<h1><%= @plate.name%></h1>
+<br />
+<i>
+<%= @plate.meal%>
+</i>
+<br />
+<p>
+<%= @plate.description%>
+</p>
+
+<br />
+<% @plate.ingredients.each do |ing| %>
+<%= ing.name%>
+<%= ing.amount%>
+<%end %>
+<br />
+<br />
+<%= link_to "Edit", edit_plate_path(@plate.id) %>
+<%= link_to 'Delete', plate_path(@plate), method: :delete %>
+<%= link_to 'See Ingredients', plate_ingredients_path(@plate) %>
+
+<%= link_to 'Go Back', plates_path %>

@@ -1,0 +1,12 @@
+<h1>Plates Index === All the Plates</h1>
+
+<%= link_to 'New Plate', new_plate_path %>
+
+<% @plates.each do |plate| %>
+<ul>
+  <%= link_to plate.name, plate_path(plate.id) %>
+<%= link_to 'Delete', plate_path(plate), method: :delete %>
+
+</ul>
+
+<% end %>
